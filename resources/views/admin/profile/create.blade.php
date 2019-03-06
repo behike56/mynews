@@ -27,10 +27,25 @@
                             @endforeach
                         </ul>
                     @endif
+				
                     <div class="form-group row">
-                        <label class="col-md-2" for="title">氏名</label>
+                        <label class="col-md-2" for="name">氏名</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control
+                            <input type="text" class="form-control" name="name" value="">
+                        </div>
+                    </div>
+
+                       <div class="form-group row">
+                        <label class="col-md-2" for="gender">性別</label>
+                        <div class="col-md-10">
+                           <input name="sex" type="radio" value="男性">男性<br />
+                           <input name="sex" type="radio" value="女性">女性
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group row">
                         <label class="col-md-2" for="hobby">趣味</label>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="hobby"  rows="5">
@@ -40,7 +55,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="introduction">自己紹介</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="introduction" rows="10">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="introduction" rows="10"></textarea>
                         </div>
                     </div>
 			    
