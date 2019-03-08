@@ -5,48 +5,70 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ProfileController extends Controller
-{
-  public function add()
-  {
-      return view('admin.profile.create');
-  }
+use App\Profile;
 
-  public function create()
-  {
+class ProfileController extends Controller{
+    
+    public function add(){
+	return view('admin.profile.create');
+    }
 
-          // Varidationを行う
-      $this->validate($request, News::$rules);
+    public function create(Request $request){
 
-      $news = new News;
-      $form = $request->all();
+	// Varidationを行う
+	$this->validate($request, Profile::$rules);
 
-      // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
-      if (isset($form['image'])) {
-        $path = $request->file('image')->store('public/image');
-        $news->image_path = basename($path);
-      } else {
-          $news->image_path = null;
-      }
+	$profile = new Profile;
+	$form = $request->all(); 
 
-      // フォームから送信されてきた_tokenを削除する
-      unset($form['_token']);
-      // フォームから送信されてきたimageを削除する
-      unset($form['image']);
+	// // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
+	// if (isset($form['image'])) {
+	//   $path = $request->file('image')->store('public/image');
+	//   $news->image_path = basename($path);
+	// } else {
+	//     $news->image_path = null;
+	// }
 
-      // データベースに保存する
-      $news->fill($form);
-      $news->save();
-      
-      return redirect('admin/profile/create');
-  }
+	// // フォームから送信されてきた_tokenを削除する
+	// unset($form['_token']);
+	// // フォームから送信されてきたimageを削除する
+	// unset($form['image']);
 
- public function edit()
- {
- return view('admin.profile.edit');
- }
- public function update()
- {
- return redirect('admin/profile/edit');
- }    //
+	// データベースに保存する
+	$profile->fill($form);
+	$profile->save();
+	
+	
+	return redirect('admin/profile/create');
+    }
+
+    public function edit()
+    {
+	return view('admin.profile.edit');
+    }
+
+public function update(){
+    
+    // Validationをかける
+    $this->validate($request, Profile::$rules);
+    // News Modelからデータを取得する
+    $profile = Profile::find($request->id);
+    // 送信されてきたフォームデータを格納する
+    $profile_form = $request->all();
+    
+    // if (isset($profile_form['image'])) {
+    //   $path = $request->file('image')->store('public/image');
+    //   $profile->image_path = basename($path);
+    //   unset($profile_form['image']);
+    // } elseif (isset($request->remove)) {
+    //   $profile->image_path = null;
+    //   unset($news_form['remove']);
+    //}
+    
+    unset($profile_form['_token']);
+    // 該当するデータを上書きして保存する
+    $profile->fill($profile_form)->save();
+
+    return redirect('admin/profil/create');
+}
 }
