@@ -8,7 +8,7 @@
 	<title>MyNews</title>
     </head>
     <body>
-	@extends('layouts.admin')
+	@extends('layouts.profile')
 	@section('title', 'プロフィールの編集')
 
 	@section('content')
@@ -27,7 +27,7 @@
 			    <div class="form-group row">
 				<label class="col-md-2" for="name">氏名</label>
 				<div class="col-md-10">
-				    <input type="text" class="form-control" name="name" value="">
+				    <input type="text" class="form-control" name="name" value="{{ $profile_form->name  }}">
 				</div>
 			    </div>
 
@@ -42,16 +42,17 @@
 			    <div class="form-group row">
 				<label class="col-md-2" for="hobby">趣味</label>
 				<div class="col-md-10">
-				    <input type="text" class="form-control" name="hobby"  rows="5">
+				    <input type="text" class="form-control" name="hobby"  rows="5" value="{{ $profile_form->name }}">
 				</div>
 			    </div>
 			    
 			    <div class="form-group row">
 				<label class="col-md-2" for="introduction">自己紹介</label>
 				<div class="col-md-10">
-				    <textarea class="form-control" name="introduction" rows="10"></textarea>
+				    <textarea class="form-control" name="introduction" rows="10">{{ $profile_form->introduction }}</textarea>
 				</div>
 			    </div>
+			    <input type="hidden" name="id" value="{{ $profile_form->id }}">
 			    {{ csrf_field() }}
 			    <input type="submit" class="btn btn-primary" value="更新">
 		    </div>

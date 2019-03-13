@@ -11,8 +11,10 @@ class Profile extends Model
      * あらかじめEloquent側で割り当て許可を与えなくてはいけない。
      * セキュリティ上の仕様
      */
-     
-  protected $fillable = array('name', 'gender', 'hobby', 'introduction');
+
+    protected $guarded = array('id');
+    
+    protected $fillable = array('name', 'gender', 'hobby', 'introduction');
 
     public static $rules = array(
         'name' => 'required',

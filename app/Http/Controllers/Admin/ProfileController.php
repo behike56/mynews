@@ -8,67 +8,95 @@ use App\Http\Controllers\Controller;
 use App\Profile;
 
 class ProfileController extends Controller{
-    
+
+    /**
+     *プロフィール作成画面へ遷移
+     * @return view('admin.news.create')
+     **/
     public function add(){
 	return view('admin.profile.create');
     }
 
+    /**
+     * プロフィール作成・保存機能
+     * DB mynews.profile
+     * @parameter (Request $request)
+     * @return 	redirect('admin/news')
+     **/
     public function create(Request $request){
 
 	// Varidationを行う
 	$this->validate($request, Profile::$rules);
 
 	$profile = new Profile;
-	$form = $request->all(); 
-
-	// // フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
-	// if (isset($form['image'])) {
-	//   $path = $request->file('image')->store('public/image');
-	//   $news->image_path = basename($path);
-	// } else {
-	//     $news->image_path = null;
-	// }
-
-	// // フォームから送信されてきた_tokenを削除する
-	// unset($form['_token']);
-	// // フォームから送信されてきたimageを削除する
-	// unset($form['image']);
+	$data = $request->all(); 
 
 	// データベースに保存する
-	$profile->fill($form);
+	$profile->fill($data);
 	$profile->save();
 	
 	
-	return redirect('admin/profile/create');
+	return redirect('admin/profile');
     }
 
-    public function edit()
+    /**
+     * プロフィール情報の表示機能
+     * @parameter (Request $request)
+     * @return ('admin.news.profile', 
+     * @return ['posts' => $posts, 'user_name' => $user_name])
+     **/
+    public function mypage(Request $request){
+	$user_name = $request->name;
+	if ($user_name != '') {
+            // 検索されたら検索結果を取得する
+            $posts = Profile::where('name', $user_name)->get();
+	} else {
+            // それ以外はすべてのニュースを取得する
+            $infos = Profile::all();
+	}
+	
+	return view('admin.profile.mypage', ['infos' => $infos, 'user_name' => $user_name]);
+    }
+    
+
+    public function edit(Request $request)
     {
-	return view('admin.profile.edit');
+	$profile = Profile::find($request->id);
+
+	return view('admin.profile.edit', ['profile_form' => $profile]);
     }
 
-public function update(){
-    
-    // Validationをかける
-    $this->validate($request, Profile::$rules);
-    // News Modelからデータを取得する
-    $profile = Profile::find($request->id);
-    // 送信されてきたフォームデータを格納する
-    $profile_form = $request->all();
-    
-    // if (isset($profile_form['image'])) {
-    //   $path = $request->file('image')->store('public/image');
-    //   $profile->image_path = basename($path);
-    //   unset($profile_form['image']);
-    // } elseif (isset($request->remove)) {
-    //   $profile->image_path = null;
-    //   unset($news_form['remove']);
-    //}
-    
-    unset($profile_form['_token']);
-    // 該当するデータを上書きして保存する
-    $profile->fill($profile_form)->save();
 
-    return redirect('admin/profil/create');
-}
+    /**
+     * 編集画面から送信されたデータで上書きする（更新）
+     **/
+    public function update(Request $request){
+	
+	// Validationをかける
+	$this->validate($request, Profile::$rules);
+	
+	// Profile Modelからデータを取得する
+	$profile = Profile::find($request->id);
+
+	// 送信されてきたフォームデータを格納する
+	$profile_form = $request->all();
+	//unset($profile_form['_token']);
+	
+	// 該当するデータを上書きして保存する
+	$profile->fill($profile_form)->save();
+
+	return redirect('admin/profile');
+    }
+
+    /**
+     * ユーザーの削除機能
+     * @return redirect('admin/profile')
+     **/
+    public function delete(Request $request){
+	// 該当するPrifle Modelを取得
+	$profile = Profile::find($request->id);
+	// 削除する
+	$profile->delete();
+	return redirect('admin/profile');
+    }
 }
