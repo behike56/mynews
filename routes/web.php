@@ -37,14 +37,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
      * 作成画面、編集画面
      **/
     Route::get('profile/create', 'Admin\ProfileController@add');
-    Route::post('profile/create', 'Admin\ProfileController@create')
-    ;
+    Route::post('profile/create', 'Admin\ProfileController@create');
+    
     Route::get('profile/edit', 'Admin\ProfileController@edit');
     Route::post('profile/edit', 'Admin\ProfileController@update');
 
     Route::get('profile', 'Admin\ProfileController@mypage');
 
-    Route::get('news/delete', 'Admin\ProfileController@delete');
+    Route::get('profile/delete', 'Admin\ProfileController@delete');
 });
 
 
