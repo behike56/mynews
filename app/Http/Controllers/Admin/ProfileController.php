@@ -91,7 +91,7 @@ class ProfileController extends Controller{
 
 	//変更履歴の記録
 	$myhistory = new Myhistory;
-        $myhistory->user_id = $profile->id;
+        $myhistory->profile_id = $profile->id;
         $myhistory->edited_at = Carbon::now();
         $myhistory->save();
 

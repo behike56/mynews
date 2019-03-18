@@ -15,7 +15,7 @@ class CreateMyhistoriesTable extends Migration
     {
         Schema::create('myhistories', function (Blueprint $table) {
             $table->bigIncrements('id');
-	    $table->integer('user_id');
+            $table->integer('profile_id');
             $table->string('edited_at');
             $table->timestamps();
         });

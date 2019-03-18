@@ -10,6 +10,7 @@ class Myhistory extends Model
     protected $primaryKey = 'id';
     
     public static $rules = array(
+        'profile_id' => 'required',
         'user_id' => 'required',
         'edited_at' => 'required',
     );
