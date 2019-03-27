@@ -80,10 +80,10 @@
 
 		<h1>My News</h1>
 		<h2>front.blade.php</h2>
-		<a href="{{url('/layouts/index')}}">
-		    <p>記事一覧へ</p>
+		<a href="{{url('/')}}">
+		    <p>TOPページへ</p>
 		</a>
-		<a href="{{url('/layouts/profile')}}">
+		<a href="{{url('/profile')}}">
 		    <p>投稿者プロフィールへ</p>
 		</a>
                 @yield('content')

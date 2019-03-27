@@ -50,7 +50,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
 Auth::routes();
 
+/**
+ * 一般ユーザ（アカウント登録なし）用
+ * ページ閲覧
+ * トップページ、記事一覧ページ、投稿者プロフィールページ
+ **/
+
+Route::get('/', 'HomeController@top');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', 'NewsController@index');
+Route::get('/index', 'NewsController@index');
 Route::get('/profile', 'NewsController@profile');

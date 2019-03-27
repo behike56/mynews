@@ -17,6 +17,16 @@ class HomeController extends Controller
     }
 
     /**
+     *トップページ
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        return view('top');
+    }
+    
+    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
@@ -25,4 +35,5 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    
 }
