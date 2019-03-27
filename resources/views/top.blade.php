@@ -65,12 +65,13 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
+	    <a href="{{ url('/home') }}">Home</a></br>
             <a href="{{url('/')}}">
 		<p>記事一覧へ</p>
-	    </a>
+	    </a></br>
 	    <a href="{{url('/profile')}}">
 		<p>投稿者プロフィールへ</p>
-	    </a>
+	    </a></br>
 
         </div>
     </body>
