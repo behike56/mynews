@@ -41,7 +41,6 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-			    <p>testtesttest</p>
                         </ul>
 
                         <!-- Right Side Of Navbar -->
@@ -81,7 +80,7 @@
 
 		<h1>My News</h1>
 		<h2>front.blade.php</h2>
-		<a href="{{url('/layout/index')}}">
+		<a href="{{url('/layouts/index')}}">
 		    <p>記事一覧へ</p>
 		</a>
 		<a href="{{url('/layouts/profile')}}">
