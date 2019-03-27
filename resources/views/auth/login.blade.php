@@ -57,6 +57,9 @@
                                 </div>
                             </div>
                         </form>
+			<a href="{{route('register')}}">
+			    <p>アカウント登録はこちらから</p>
+			</a>
                     </div>
                 </div>
             </div>
