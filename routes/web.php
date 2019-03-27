@@ -56,8 +56,8 @@ Auth::routes();
  * トップページ、記事一覧ページ、投稿者プロフィールページ
  **/
 
-Route::get('/', 'HomeController@top');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('top');
+Route::get('/home', 'HomeController@home');
 
 Route::get('/index', 'NewsController@index');
 Route::get('/profile', 'NewsController@profile');
