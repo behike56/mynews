@@ -78,8 +78,6 @@
             <main class="py-4">
                 {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
 
-		<h1>My News</h1>
-		<h2>front.blade.php</h2>
 		<a href="{{url('/')}}">
 		    <p>TOPページへ</p>
 		</a>

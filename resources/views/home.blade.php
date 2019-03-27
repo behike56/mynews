@@ -23,6 +23,12 @@
 		    <a href="{{url('/profile')}}">
 			<p>投稿者プロフィールへ</p>
 		    </a>
+		    <a href="{{url('/profile/create')}}">
+			<p>プロフィール作成</p>
+		    </a>
+		    <a href="{{url('/news/create')}}">
+			<p>記事作成</p>
+		    </a>
 		</div>
             </div>
         </div>
