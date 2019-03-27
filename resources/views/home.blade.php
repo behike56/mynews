@@ -17,10 +17,10 @@
                     You are logged in!
                 </div>
 		<div class="card-header">
-		    <a href="{{url('/layouts/index')}}">
+		    <a href="{{url('/')}}">
 			<p>記事一覧へ</p>
 		    </a>
-		    <a href="{{url('/layouts/profile')}}">
+		    <a href="{{url('/profile')}}">
 			<p>投稿者プロフィールへ</p>
 		    </a>
 		</div>
