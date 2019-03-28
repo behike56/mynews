@@ -61,6 +61,17 @@
          .m-b-md {
              margin-bottom: 30px;
          }
+
+	 .table {
+	     border: 1px #000000 ridge;
+	     background-color: #d3d3d3;
+	 }
+
+	 .td {
+	     border: 1px #000000 outset;
+	     background-color: #778899;
+	     padding: 2px 2px;
+	 }
         </style>
     </head>
     <body>
@@ -103,7 +114,7 @@
 			    </tr>
 			    <tr>
 				<td>
-				    <a href="https://laravel-news.com">pu投稿者のプロフィールを見る</a>
+				    <a href="https://laravel-news.com">投稿者のプロフィールを見る</a>
 				</td>
 				
 				<td>
