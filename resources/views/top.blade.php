@@ -29,7 +29,7 @@
              display: flex;
              justify-content: center;
          }
-
+p
          .position-ref {
              position: relative;
          }
@@ -119,6 +119,12 @@
 				
 				<td>
 				    <a href="{{url('/admin/profile/create')}}">プロフィール作成＆編集</a>
+				</td>
+			    </tr>
+			    <tr>
+				<td></td>
+				<td>
+				    <a href="{{url('/admin/profile/edit')}}">記事の編集</a>
 				</td>
 			    </tr>
                     </table>
