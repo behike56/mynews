@@ -70,10 +70,10 @@
                     @auth
                     <a href="{{ url('/home') }}">Home</a>
             @else
-                    <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('login') }}">投稿者-ログイン</a>
 
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                        <a href="{{ route('register') }}">投稿者-登録</a>
                     @endif
                     @endauth
                 </div>
@@ -81,17 +81,18 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    My News
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+		    <table>
+			<thead>ゲスト用ページ</thead>
+			<tr><a href="https://laravel.com/docs">記事をみる</a></tr>
+			<tr><a href="https://laracasts.com">投稿者プロフィールを見る</a></tr>
+			<thead>投稿者用ページ</thead>
+			<tr><a href="https://laravel-news.com">記事作成</a></tr>
+			<tr><a href="https://blog.laravel.com">プロフィール作成＆編集</a></tr>
+                    </table>
                 </div>
             </div>
         </div>
