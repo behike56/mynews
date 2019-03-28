@@ -109,7 +109,7 @@
 				    <a href="{{url('/index')}}">記事をみる</a>
 				</td>
 				<td>
-				    <a href="{{url('/news/create')}}">記事作成</a>
+				    <a href="{{url('/admin/news/create')}}">記事作成</a>
 				</td>
 			    </tr>
 			    <tr>
@@ -118,7 +118,7 @@
 				</td>
 				
 				<td>
-				    <a href="{{url('/profile/create')}}">プロフィール作成＆編集</a>
+				    <a href="{{url('/admin/profile/create')}}">プロフィール作成＆編集</a>
 				</td>
 			    </tr>
                     </table>
