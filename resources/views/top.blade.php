@@ -64,16 +64,34 @@
         </style>
     </head>
     <body>
-	<div class="card-body" >
-	    My News Top Page.
-	</div>
-	<div class="card-header">
-	    <a href="{{url('/index')}}">
-		<p>ニュース記事を見る</p>
-	    </a>
-	    <a href="{{url('/profile')}}">
-		<p>投稿者プロフィールを見る</p>
-	    </a>
+	<div class="container">
+	    <div class="row justify-content-center">
+		<div class="col-md-8">
+		    <div class="card">
+			<div class="card-header">TOP page</div>
+			<div class="card-body" >
+			    Welcome.
+			</div>
+			<div class="card-header">
+			    <a href="{{url('/index')}}">
+				<p>ニュース記事を見る</p>
+			    </a>
+			    <a href="{{url('/profile')}}">
+				<p>投稿者プロフィールを見る</p>
+			    </a>
+			</div>
+			<div class="card-header">投稿者用ページ</div>
+			<div class="card-header">
+			    <a href="{{url('/news/create')}}">
+				<p>記事を投稿する</p>
+			    </a>
+			    <a href="{{url('/profile/create')}}">
+				<p>プロフィール追加＆編集</p>
+			    </a>
+			</div>
+		    </div>
+		</div>
+	    </div>
 	</div>
     </body>
 </html>
