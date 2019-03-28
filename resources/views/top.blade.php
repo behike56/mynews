@@ -62,12 +62,12 @@
              margin-bottom: 30px;
          }
 
-	 .table {
+	 table {
 	     border: 1px #000000 ridge;
 	     background-color: #d3d3d3;
 	 }
 
-	 .td {
+	 td {
 	     border: 1px #000000 outset;
 	     background-color: #778899;
 	     padding: 2px 2px;
