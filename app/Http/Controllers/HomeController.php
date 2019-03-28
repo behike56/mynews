@@ -15,16 +15,6 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
-
-    /**
-     *トップページ
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-    public function index()
-    {
-        return view('top');
-    }
     
     /**
      * Show the application dashboard.

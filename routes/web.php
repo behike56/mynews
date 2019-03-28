@@ -10,6 +10,7 @@
    | contains the "web" middleware group. Now create something great!
    |
  */
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
@@ -48,7 +49,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 });
 
 
-Auth::routes();
+
 
 /**
  * 一般ユーザ（アカウント登録なし）用
@@ -56,7 +57,7 @@ Auth::routes();
  * トップページ、記事一覧ページ、投稿者プロフィールページ
  **/
 
-Route::get('/', 'HomeController@index')->name('top');
+Route::get('/', 'TopController@index')->name('top');
 Route::get('/home', 'HomeController@home');
 
 Route::get('/index', 'NewsController@index');
