@@ -64,15 +64,16 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-	    <a href="{{ url('/home') }}">Home</a></br>
-            <a href="{{url('/')}}">
-		<p>記事一覧へ</p>
-	    </a></br>
+	<div class="card-body" >
+	    My News Top Page.
+	</div>
+	<div class="card-header">
+	    <a href="{{url('/index')}}">
+		<p>ニュース記事を見る</p>
+	    </a>
 	    <a href="{{url('/profile')}}">
-		<p>投稿者プロフィールへ</p>
-	    </a></br>
-
-        </div>
+		<p>投稿者プロフィールを見る</p>
+	    </a>
+	</div>
     </body>
 </html>
