@@ -100,13 +100,13 @@
 			<thead>
 			    <tr>
 				<th>ゲスト用ページ</th>
-				<th>投稿者様ページ</th>
+				<th>投稿者用ページ</th>
 			    </tr>
 			</thead>
 			<tbody>
 			    <tr>
 				<td>
-				    <a href="{{url('/index')}}">記事をみる</a>
+				    <a href="{{url('/index')}}">記事を見る</a>
 				</td>
 				<td>
 				    <a href="{{url('/admin/news/create')}}">記事作成</a>
