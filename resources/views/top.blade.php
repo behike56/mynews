@@ -86,12 +86,30 @@
 
                 <div class="links">
 		    <table>
-			<thead>ゲスト用ページ</thead>
-			<tr><a href="https://laravel.com/docs">記事をみる</a></tr>
-			<tr><a href="https://laracasts.com">投稿者プロフィールを見る</a></tr>
-			<thead>投稿者用ページ</thead>
-			<tr><a href="https://laravel-news.com">記事作成</a></tr>
-			<tr><a href="https://blog.laravel.com">プロフィール作成＆編集</a></tr>
+			<thead>
+			    <tr>
+				<th>ゲスト用ページ</th>
+				<th>投稿者様ページ</th>
+			    </tr>
+			</thead>
+			<tbody>
+			    <tr>
+				<td>
+				    <a href="https://laravel.com/docs">記事をみる</a>
+				</td>
+				<td>
+				    <a href="https://laracasts.com">記事作成</a>
+				</td>
+			    </tr>
+			    <tr>
+				<td>
+				    <a href="https://laravel-news.com">pu投稿者のプロフィールを見る</a>
+				</td>
+				
+				<td>
+				    <a href="https://blog.laravel.com">プロフィール作成＆編集</a>
+				</td>
+			    </tr>
                     </table>
                 </div>
             </div>
