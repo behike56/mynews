@@ -124,7 +124,7 @@ p
 			    <tr>
 				<td></td>
 				<td>
-				    <a href="{{url('/admin/profile/edit')}}">記事の編集</a>
+				    <a href="{{url('/admin/news/edit')}}">記事の編集</a>
 				</td>
 			    </tr>
                     </table>
