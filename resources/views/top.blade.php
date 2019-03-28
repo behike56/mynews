@@ -106,19 +106,19 @@
 			<tbody>
 			    <tr>
 				<td>
-				    <a href="https://laravel.com/docs">記事をみる</a>
+				    <a href="{{url('/index')}}">記事をみる</a>
 				</td>
 				<td>
-				    <a href="https://laracasts.com">記事作成</a>
+				    <a href="{{url('/news/create')}}">記事作成</a>
 				</td>
 			    </tr>
 			    <tr>
 				<td>
-				    <a href="https://laravel-news.com">投稿者のプロフィールを見る</a>
+				    <a href="{{url('/profile')}}">投稿者のプロフィールを見る</a>
 				</td>
 				
 				<td>
-				    <a href="https://blog.laravel.com">プロフィール作成＆編集</a>
+				    <a href="{{url('/profile/create')}}">プロフィール作成＆編集</a>
 				</td>
 			    </tr>
                     </table>
